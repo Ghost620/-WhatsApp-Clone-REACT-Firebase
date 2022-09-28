@@ -6,7 +6,7 @@ import { Avatar, IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { SearchOutlined } from '@mui/icons-material'
 import SidebarChat from './SidebarChat';
-import db from './firebase';
+import db from "./firebase";
 
 const sidebar = () => {
 
