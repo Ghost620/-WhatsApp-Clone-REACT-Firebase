@@ -8,9 +8,16 @@ import MicIcon from '@mui/icons-material/Mic';
 const Chat = () => {
 
   const [seed, setSeed] = useState('')
+  const [input, setInput] = useState('')
+
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000))
   })
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+    console.log(input)
+  }
 
   return (
     <div className='chat'>
@@ -43,13 +50,23 @@ const Chat = () => {
 
         <div className='chat_body'>
 
+          <p className={`chat_message ${true && 'chat_receiver'}`}>
+            <span className='chat_name'>Hello</span>
+            Message
+            <span className='chat_timestamp'>3:53pm</span>
+          </p>
+
         </div>
 
         <div className='chat_footer'>
 
           <EmojiEmotionsIcon />
           <form>
-            
+
+            <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Type a message'/>
+
+            <button type='submit' onClick={sendMessage}>Send a messae</button>
+
           </form>
           <MicIcon />
 
