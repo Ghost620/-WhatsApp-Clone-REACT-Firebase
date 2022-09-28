@@ -56,10 +56,10 @@ const sidebar = () => {
         </div>
         
         <div className='sidebar_chats'>
-          <SidebarChat addNewChat/>
-          <SidebarChat />
-          <SidebarChat />
-          <SidebarChat />
+          <SidebarChat addNewChat={true} />
+          {rooms.map((room) => (
+            <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+          ))}
         </div>
 
     </div>
