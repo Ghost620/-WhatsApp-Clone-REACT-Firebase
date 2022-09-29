@@ -20,11 +20,11 @@ const Chat = () => {
         setRoomName(snapshot.data().name)
       })
     }
-  }, [roomId])
+  }, [roomId]);
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000))
-  })
+  }, [roomId])
 
   const sendMessage = (e) => {
     e.preventDefault();

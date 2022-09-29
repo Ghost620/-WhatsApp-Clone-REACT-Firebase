@@ -9,7 +9,7 @@ const SidebarChat = ( { id, name, addNewChat } ) => {
   const [seed, setSeed] = useState('')
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000))
-  })
+  }, [])
 
   const createChat = () => {
     const roomName = prompt("Please enter name for chat room");
