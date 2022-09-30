@@ -6,6 +6,8 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import MicIcon from '@mui/icons-material/Mic';
 import { useParams } from "react-router-dom";
 import db from './firebase';
+import firebase from "firebase/compat/app";
+import { useStateValue } from './StateProvider';
 
 const Chat = () => {
 
@@ -14,6 +16,7 @@ const Chat = () => {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([])
+  const [{user}, dispatch] = useStateValue();
 
   useEffect(() => {
     if (roomId) {
@@ -37,12 +40,14 @@ const Chat = () => {
     e.preventDefault();
     console.log(input)
 
-
+    db.collection('rooms').doc(roomId).collection('messages').add({
+      message: input,
+      name: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    })
     
     setInput('')
   }
-
-  console.log(roomName)
 
   return (
     <div className='chat'>
@@ -77,7 +82,7 @@ const Chat = () => {
 
           {messages.map(msg => (
 
-            <p className={`chat_message ${true && 'chat_receiver'}`}>
+            <p className={`chat_message ${msg.name === user.displayName && 'chat_receiver'}`}>
               <span className='chat_name'> {msg.name} </span>
               {msg.message}
               <span className='chat_timestamp'> {new Date(msg.timestamp?.toDate()).toUTCString()} </span>
