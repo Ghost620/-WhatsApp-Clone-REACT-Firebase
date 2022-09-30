@@ -7,10 +7,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { SearchOutlined } from '@mui/icons-material'
 import SidebarChat from './SidebarChat';
 import db from "./firebase";
+import { useStateValue } from './StateProvider';
 
 const sidebar = () => {
 
   const [rooms, setRooms] = useState([]);
+  const [{user}, dispatch] = useStateValue();
 
   useEffect( () => {
     const unsubscribe = db.collection('rooms').onSnapshot(snapshot => {
@@ -33,7 +35,7 @@ const sidebar = () => {
 
         <div className='sidebar_header'>
 
-          <Avatar src='https://cdn.pixabay.com/photo/2016/01/31/19/41/apple-1172060_960_720.jpg'/>
+          <Avatar src={user?.photoURL} alt='https://cdn.pixabay.com/photo/2016/01/31/19/41/apple-1172060_960_720.jpg'/>
 
           <div className='sidebar_headerRight'>
               

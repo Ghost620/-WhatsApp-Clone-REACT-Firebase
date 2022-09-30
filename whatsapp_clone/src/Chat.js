@@ -30,6 +30,8 @@ const Chat = () => {
     e.preventDefault();
     console.log(input)
 
+    
+    
     setInput('')
   }
 
