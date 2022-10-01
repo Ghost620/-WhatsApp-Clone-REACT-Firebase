@@ -13,7 +13,7 @@ const SidebarChat = ( { id, name, addNewChat } ) => {
     if (id) {
       db.collection('rooms').doc(id).collection('messages').orderBy('timestamp', 'desc').onSnapshot( (snap) => setMessages(snap.docs.map( (doc) => doc.data())));
     }
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000))
