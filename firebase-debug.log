@@ -1,0 +1,21 @@
+[debug] [2023-01-07T20:51:26.099Z] ----------------------------------------------------------------------
+[debug] [2023-01-07T20:51:26.100Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\fagho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-01-07T20:51:26.101Z] CLI Version:   11.19.0
+[debug] [2023-01-07T20:51:26.101Z] Platform:      win32
+[debug] [2023-01-07T20:51:26.101Z] Node Version:  v16.17.1
+[debug] [2023-01-07T20:51:26.102Z] Time:          Sun Jan 08 2023 01:51:26 GMT+0500 (Pakistan Standard Time)
+[debug] [2023-01-07T20:51:26.102Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-07T20:51:26.108Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-07T20:51:26.108Z] > authorizing via signed-in user (faghost6201@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\fagho\Documents\Github\WhatsApp-Clone-REACT-Firebase
+
