@@ -9,7 +9,7 @@ import SidebarChat from './SidebarChat';
 import db from "./firebase";
 import { useStateValue } from './StateProvider';
 
-const sidebar = () => {
+const Sidebar = () => {
 
   const [rooms, setRooms] = useState([]);
   const [{user}, dispatch] = useStateValue();
@@ -73,4 +73,4 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar
